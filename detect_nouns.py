@@ -4,7 +4,7 @@ from nltk.tag import pos_tag
 
 
 # Sample sentence
-sentence = "Missing or outdated documents normally get requested by the operations team in HTW."
+sentence = "Personally I foound the User Interface pretty difficult to use"
 
 # Tokenize the sentence and tag each word with its part of speech
 tokens = word_tokenize(sentence)
