@@ -1,0 +1,60 @@
+
+### Script 1: Utilise_AI.sh
+This shell script is used to pass parameters to the Python script `Utilise_Models.py` and execute it.
+
+**Key Actions:**
+- Assigns a parameter (`"Hello World"`) to the variable `param1`.
+- Executes the `Utilise_Models.py` script and passes `param1` as a command-line argument.
+
+**Purpose:** 
+This script serves as an interface to run the Python model utilization script with a parameter.
+
+---
+
+### Script 2: Utilise_Models.py
+This Python script is used to load a pre-trained model (`trained_model.h5`) and check its summary.
+
+**Key Actions:**
+- Accepts a single command-line argument (`param1`).
+- Loads the `.h5` model using TensorFlow's `load_model` function.
+- Prints the model summary to display its architecture.
+
+**Purpose:** 
+This script is designed to load a trained TensorFlow model and display its details. It can be used as a base for further processing or inference tasks.
+
+---
+
+### Script 3: AI_Model_V2_Multiple.py
+This Python script is used to train a machine learning model using data from an Excel file and save the trained model to a `.h5` file.
+
+**Key Actions:**
+- Loads data from `training_data.xlsx` and checks for required columns (`'Input'`, `'Tag1'`, `'Tag2'`, `'Tag3'`).
+- Preprocesses the input data (tokenization and padding) and encodes the target tags.
+- Builds a deep learning model using LSTM layers.
+- Trains the model on the data for 10 epochs and saves the trained model as `trained_model.h5`.
+
+**Purpose:** 
+This script trains a multi-output model using TensorFlow to classify input text based on three target tags and saves the trained model for future use.
+
+---
+
+### Script 4: Train_AI.py
+This bash shell script automates the training process by checking for the dataset, installing dependencies, and running the Python training script.
+
+**Key Actions:**
+- Checks if `training_data.xlsx` is present in the current directory. If not, it exits with an error message.
+- Installs necessary Python libraries (`tensorflow`, `pandas`, `scikit-learn`, `openpyxl`).
+- Runs the `AI_Model_V2_Multiple.py` Python script to start the model training process.
+
+**Purpose:** 
+This script ensures that the necessary environment is set up (dataset and libraries) and automates the model training process by running the Python script.
+
+---
+
+### Summary of All Scripts:
+1. **`Utilise_AI.sh`**: A shell script that passes a parameter (`"Hello World"`) to the `Utilise_Models.py` Python script for processing.
+2. **`Utilise_Models.py`**: A Python script that loads a pre-trained model (`trained_model.h5`), ensuring it's properly loaded and ready for inference, and prints the model's summary.
+3. **`AI_Model_V2_Multiple.py`**: A Python script that preprocesses data from an Excel file, builds and trains a machine learning model using TensorFlow (with LSTM layers), and saves the trained model.
+4. **`Train_AI.py`**: A bash script that automates the model training process by checking for the dataset, installing necessary dependencies, and running the `AI_Model_V2_Multiple.py` script.
+
+These scripts together form a pipeline for training a machine learning model, including preprocessing, model building, training, and saving the trained model, while also ensuring the environment is correctly set up.
